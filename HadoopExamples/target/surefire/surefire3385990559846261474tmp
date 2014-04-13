@@ -1,0 +1,5 @@
+#surefire
+#Sun Apr 13 13:44:34 EDT 2014
+user.dir=/home/hadoop/git/Hadoop/HadoopExamples
+localRepository=/home/hadoop/.m2/repository
+basedir=/home/hadoop/git/Hadoop/HadoopExamples
