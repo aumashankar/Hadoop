@@ -19,7 +19,7 @@ public class WriteToFile {
 
 	public static void main(String[] args) throws IOException {
 		
-		String textToWrite = "Hello HDFS!. . . in love with Hadoop!\n";
+		String textToWrite = "Hadoop|HBase|MapReduce|Pig|Hive|Flume|Sqoop|ZooKeeper|Mahout|Fuse|Cassendra|Mongo|Jaql!\n";
 		InputStream in = new BufferedInputStream(new ByteArrayInputStream(textToWrite.getBytes()));
 		//Path repersents a File or Directory in Hadoop distributed environment.
 		Path toHdfs = new Path("/j2eedev/playArea/writeFile.txt");

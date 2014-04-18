@@ -17,8 +17,8 @@ public class CopyFileToHdfs {
 		//Represents a FileSystem in Hadoop distributed environment 
 		FileSystem fs = FileSystem.get(new Configuration());
 		//Path represents a File or Directory in Hadoop distributed environment
-		Path fromLocal = new Path("/home/hadoop/Training/exercises/sample_data/hamlet.txt");
-		Path toHdfs = new Path("/j2eedev/playArea/hamlet.txt");
+		Path fromLocal = new Path("/home/hadoop/j2eedev/hadoop/data/readMe.txt");
+		Path toHdfs = new Path("/j2eedev/playArea/readMe.txt");
 		//It is similar to copyFromLocal command in HDFS shell.
 		fs.copyFromLocalFile(fromLocal, toHdfs);
 	}
