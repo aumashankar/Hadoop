@@ -1,0 +1,35 @@
+
+Hadoop Program:
+===============
+
+Install Hadoop on any linux machine.
+
+Step 1: Format the hadoop files system.
+        ./hadoop namenode -format
+
+Step 2: start the hadoop Enivoronment
+        ./start-all.sh
+
+Step 3: Make sure the following nodes are started - NameNode, DataNode,TaskTracker, JobTracker
+
+Step 4: create a input folder in hdfs
+        ./hadoop dfs -mkdir /tmp/hadoop-gtanniru1/query_in
+
+Step 5:  load the logfile to be analysed into the hdfs   
+       ./hadoop dfs -copyFromLocal /home/userid/localfolder/items_log.txt /tmp/hadoop-folder/query-in
+        
+    Here items_log.txt has the log data to be analysed and query-in is the input folder in hdfs
+Step 6: Place the DbHadoop.jar(The Actual Program) file in your hadoop installation directory
+
+Step 7: Run the below command from the bin folder
+        ./hadoop  jar ../DbHadoop.jar GroupBy /tmp/hadoop-folder/query-in /tmp/hadoop-folder/query-out 1 1
+
+                   GroupBy is the class with 4 command line parameters 
+           1.input hadoop folder 2 .output hadoop folder 3.number of Mappers 4. Number of Reducers
+     
+ Step 8: After successful execution the results will be store in the hdfs output folder query-out
+         in order to list the files, below is the command
+        ./hadoop dfs -ls /tmp/hadoop-gtanniru1/query-out
+ 
+Step 9: To copy the files into local file system
+        ./hadoop dfs -copyToLocal /tmp/hadoop-folder/query-out/* /home/userfolder/output 
